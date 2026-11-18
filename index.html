@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#242424" />
+    <title>Responsive Calculator</title>
+  </head>
+  <body>
+    <main class="grid min-h-screen place-items-center bg-[#242424] px-4 py-8">
+      <section
+        aria-label="Calculator"
+        class="w-full max-w-[400px] overflow-hidden rounded-[28px] border border-[#c8c8c8] bg-black"
+      >
+        <div
+          class="flex h-[100px] items-center justify-end overflow-hidden rounded-b-[24px] border-b border-[#9e9e9e] px-5"
+        >
+          <output
+            id="display"
+            aria-label="Calculator display"
+            aria-live="polite"
+            class="block max-w-full overflow-hidden text-right text-[clamp(3rem,13vw,5rem)] leading-none font-normal tracking-tight text-white"
+          >0</output>
+        </div>
+
+        <div id="keypad" class="grid grid-cols-4 gap-x-[20px] gap-y-[18px] px-5 pt-5 pb-5">
+          <!-- Row 1 -->
+          <button class="key key--accent" data-action="clear" aria-label="All clear">AC</button>
+          <button class="key key--accent" data-action="delete" aria-label="Delete last digit">DEL</button>
+          <button class="key key--accent" data-action="percent" aria-label="Percent">%</button>
+          <button class="key key--accent" data-operator="+" aria-label="Add">+</button>
+
+          <!-- Row 2 -->
+          <button class="key" data-digit="7">7</button>
+          <button class="key" data-digit="8">8</button>
+          <button class="key" data-digit="9">9</button>
+          <button class="key key--accent" data-operator="-" aria-label="Subtract">-</button>
+
+          <!-- Row 3 -->
+          <button class="key" data-digit="4">4</button>
+          <button class="key" data-digit="5">5</button>
+          <button class="key" data-digit="6">6</button>
+          <button class="key key--accent" data-operator="×" aria-label="Multiply">×</button>
+
+          <!-- Row 4 (matches the PPTX) -->
+          <button class="key" data-digit="3">3</button>
+          <button class="key" data-digit="2">2</button>
+          <button class="key" data-digit="1">1</button>
+          <button class="key key--accent" data-operator="÷" aria-label="Divide">÷</button>
+
+          <!-- Row 5 -->
+          <button class="key" data-digit="0">0</button>
+          <button class="key" data-action="decimal" aria-label="Decimal point">.</button>
+          <button class="key key--accent col-span-2" data-action="equals" aria-label="Equals">=</button>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
